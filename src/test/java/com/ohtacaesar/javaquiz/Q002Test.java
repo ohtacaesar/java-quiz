@@ -1,26 +1,32 @@
 package com.ohtacaesar.javaquiz;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-class Q001Test {
+class Q002Test {
 
-  private Q001 q = new Q001();
+  private Q002 q = new Q002();
 
   @Test
   void test01() {
-    assertTrue(q.run("test1", "test1"));
+    assertEquals(0, q.run(""));
   }
 
   @Test
   void test02() {
-    assertFalse(q.run("test2", "test3"));
+    assertEquals(4, q.run("test"));
   }
 
   @Test
   void test03() {
-    assertTrue(q.run(new String("test4"), new String("test4")));
+    assertEquals(3, q.run("日本語"));
+  }
+
+  @Test
+  void test04() {
+    assertEquals(-1, q.run(null));
   }
 }
